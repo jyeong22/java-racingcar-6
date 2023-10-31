@@ -3,9 +3,10 @@ package racingcar.model;
 import java.util.List;
 
 public class CurrentResultMap {
-    private final static String moveUnit = "-";
-    private final static String printMoveFormat = "%s : %s\n";
+    private static final String moveUnit = "-";
+    private static final String printMoveFormat = "%s : %s\n";
 
+    // test
     public static String getCurrentResultMap(List<Car> cars) {
         String currentResultMap = "";
         for (Car car : cars) {
@@ -14,6 +15,7 @@ public class CurrentResultMap {
             String moveUnits = moveUnit.repeat(moveDistance);
             currentResultMap += String.format(printMoveFormat, carName, moveUnits);
         }
-        return currentResultMap;
+        return currentResultMap+"\n";
     }
+
 }

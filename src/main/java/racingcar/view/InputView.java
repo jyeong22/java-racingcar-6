@@ -8,11 +8,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class InputView {
-    private final static String spaceString = " ";
-    private final static String blankString = "";
-    private final static String commaString = ",";
-    private final static String inputRacingCarsNameMessage = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
-    private final static String inputCountMessage = "시도할 회수는 몇회인가요?";
+    private static final String commaString = ",";
+    private static final String inputRacingCarsNameMessage = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
+    private static final String inputCountMessage = "시도할 회수는 몇회인가요?";
 
     public static List<String> inputCarNames() {
         System.out.println(inputRacingCarsNameMessage);

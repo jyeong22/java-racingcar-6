@@ -1,6 +1,5 @@
 package racingcar.model;
 
-import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.InputValidator;
 
 import java.util.ArrayList;
@@ -8,26 +7,18 @@ import java.util.List;
 
 public class RacingGame {
     private final List<Car> cars = new ArrayList<>();
+    private int tryCount;
 
-    public RacingGame(List<String> carNames) {
+    //test
+    public void setCarNames(List<String> carNames){
         InputValidator.validateCarsName(carNames);
         initCars(carNames);
     }
 
-    public String race() {
-        for (Car car : cars) {
-            int randomNum = getRandomNum();
-            car.move(randomNum);
-        }
-        return CurrentResultMap.getCurrentResultMap(cars);
-    }
-
-    public String getWinners() {
-        return WinnerCalculator.getWinners(cars);
-    }
-
-    private List<Car> getCars() {
-        return cars;
+    //test
+    public void setTryCount(int tryCount){
+        InputValidator.validateCount(tryCount);
+        this.tryCount = tryCount;
     }
 
     private void initCars(List<String> carNames) {
@@ -36,7 +27,18 @@ public class RacingGame {
         }
     }
 
-    private int getRandomNum() {
-        return Randoms.pickNumberInRange(0, 9);
+    //test
+    public String race() {
+        String finalResult = "\n실행결과\n";
+        for(int i = 0; i<tryCount;++i){
+            String resultOfRound = OneRound.playGames(cars);
+            finalResult+=resultOfRound;
+        }
+        return finalResult;
+    }
+
+    //test
+    public String getWinners() {
+        return WinnerCalculator.getWinners(cars);
     }
 }

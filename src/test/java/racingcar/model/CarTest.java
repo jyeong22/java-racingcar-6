@@ -33,4 +33,5 @@ public class CarTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(ExceptionMessage.INPUT_WRONG_CAR_NAME_LENGTH_MESSAGE.getExceptionMessage());
     }
+
 }
